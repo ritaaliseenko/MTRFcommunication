@@ -16,9 +16,7 @@ def send_command(id0, id1, id2, id3):
     crc = byte_summ % 256
     command_package[15] = crc
     port.write(command_package)
-
     answer = port.read(size=17)
-
     answer_byte_ctr = answer[2]
     answer_dict = dict(zip(answer_title, answer))
     print(answer_dict)
