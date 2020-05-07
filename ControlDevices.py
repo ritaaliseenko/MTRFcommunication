@@ -18,8 +18,8 @@ def send_command(id0, id1, id2, id3):
     port.write(command_package)
     answer = port.read(size=17)
     answer_byte_ctr = answer[2]
-    answer_dict = dict(zip(answer_title, answer))
-    print(answer_dict)
+    answer_dictionary = dict(zip(answer_title, answer))
+    print(answer_dictionary)
     # Передача следующей комады возможна не раньше, чем придет ответ от предыдущей команды
     # или после максимального таймаута в 5-7 секунд
     if answer_byte_ctr == 1 or answer_byte_ctr == 2:
